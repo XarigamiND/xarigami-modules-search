@@ -1,0 +1,11 @@
+Version 0.3.1 xx Aug 2010
+ - xsearch-000633 Display prior search set to FALSE by default
+ - xsearch-000632 xarigami menus
+ - xsearch-000634 Search block with advanced search
+
+2005-09-10: jojodee
+- added some admin modify config functions and templates
+- added an overview page template
+- added admin menus
+- added configurable view of last 10 searches in user Search page so can be switched off
+- Added new mod vars, adminsearch mask in init and upgrade

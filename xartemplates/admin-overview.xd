@@ -1,0 +1,63 @@
+<xar:comment> License: GPL http://www.gnu.org/copyleft/gpl.html </xar:comment>
+<div class="xar-mod-page">
+    <div class="xar-mod-head">
+        <xar:if condition="!xarRequestIsAJAX()">
+            <xar:template type="module" module="base" file="admin-menu" />
+        </xar:if>
+    </div>
+    <div class="xar-mod-body">
+        <h1><xar:mlstring>Overview</xar:mlstring></h1>
+        <div class="xar-mod-content">
+
+            <img src="#xarTplGetImage('admin.png','search')#" class="xar-module-icon" alt="official icon" />
+
+            <h2><xar:mlstring>What is it?</xar:mlstring></h2>
+            <p>
+                <em><xar:mlstring>Search is the documented Xarigami Search Utility Module.</xar:mlstring></em>
+                <xar:mlstring>The search module does not provide any search data. It is currently responsible for:</xar:mlstring>
+            </p>    <ul>
+                <li><xar:mlstring>processing gui search form data provided by other modules that have a search hook</xar:mlstring></li>
+                <li><xar:mlstring>displaying the search results passed from modules that offer a search hook</xar:mlstring></li>
+                <li><xar:mlstring>provide some configuration to display last X searches.</xar:mlstring></li>
+            </ul>
+
+            <h3><xar:mlstring>How to use it?</xar:mlstring></h3>
+            <p>
+                <xar:mlstring>This module is intended as a utility module that can be used by those modules that provide a search hook.  Its output is is dependent on the information it is passed from other modules.</xar:mlstring>
+            </p>
+            <p>
+                <xar:mlstring>To activate search for a particular module:</xar:mlstring>
+            </p>
+            <ul>
+                <li><xar:mlstring>Make sure that the specific module provides a Search hook (look in the module's overview).</xar:mlstring></li>
+                <li><xar:mlstring>As Admin go to Modules</xar:mlstring>, <a href="#xarModURL('modules','admin','hooks')#"><xar:mlstring>Configure Hooks</xar:mlstring></a></li>
+                <li><xar:mlstring>Click on the module providing the search hook (eg Articles) and then browse down until you come to Search module and click on the checkbox to activate the search hook.</xar:mlstring></li>
+            </ul>
+
+            <h3><xar:mlstring>Included Blocks</xar:mlstring></h3>
+            <ul>
+                <li><xar:mlstring>search: displays a simple search input box.</xar:mlstring></li>
+            </ul>
+
+            <h3><xar:mlstring>Included Hooks</xar:mlstring></h3>
+            <p>
+                <xar:mlstring>None provided at this time.</xar:mlstring>
+            </p>
+
+
+            <h3>
+                <xar:mlstring>Further Information</xar:mlstring>
+            </h3>
+            <p>
+            <ul>
+                <li><xar:mlstring>Search project page at </xar:mlstring> <a href="http://xarigami.com/project/xarigami_search" title="#xarML('Search - Extension 32')#">Xarigami Project Page</a>.
+                </li>
+            </ul>
+            </p>
+
+          <p class="xar-sub">
+                <xar:mlstring>Search Module Overview</xar:mlstring>&nbsp;<xar:mlstring>Revision</xar:mlstring> 0.3.2 &#160; 2010-08-31
+           </p>
+        </div>
+    </div>
+</div>

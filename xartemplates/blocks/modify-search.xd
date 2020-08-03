@@ -1,0 +1,11 @@
+<xar:comment> License: GPL http://www.gnu.org/copyleft/gpl.html </xar:comment>
+<div class="xar-form-input-wrapper">
+    <label for="useadvanced#$blockid#" title="#xarML('Display a link for advanced search in the block?')#" class="xar-form-label">
+        <xar:mlstring>Display advanced search link?:</xar:mlstring>
+    </label>
+    <xar:data-input type="checkbox" name="useadvanced" id="useadvanced#$blockid#" value="$useadvanced" checked="$useadvanced" />
+
+    <br style="clear:both;" />
+</div>
+<!-- No further action is required for this block. The blocks admin will display this form element in a consistant manner throughout Xarigami -->
+

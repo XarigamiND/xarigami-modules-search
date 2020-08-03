@@ -1,0 +1,89 @@
+<xar:comment> License: GPL http://www.gnu.org/copyleft/gpl.html </xar:comment>
+<div class="xar-mod-page">
+    <div class="xar-mod-head">
+        <xar:if condition="!xarRequestIsAJAX()">
+            <xar:template type="module" module="base" file="user-menu" />
+        </xar:if>
+    </div>
+    <div class="xar-mod-body">
+        <h1><xar:mlstring>Search</xar:mlstring></h1>
+        <div class="xar-mod-content">
+            <xar:set name="showlastsearches">#xarModGetVar('search','showsearches')#</xar:set>
+            <xar:if condition="$showlastsearches">
+                <h4><xar:mlstring>Last 10 Searches Made</xar:mlstring></h4>
+                <table class="xar-items">
+                    <tr>
+                        <th>
+                            <xar:mlstring>Name</xar:mlstring>
+                        </th>
+                        <th>
+                            <xar:mlstring>Keywords</xar:mlstring>
+                        </th>
+                        <th >
+                            <xar:mlstring>Date and Time</xar:mlstring>
+                        </th>
+                    </tr>
+                    <xar:loop name="$searchitems">
+                        <xar:if condition="(($loop:index + 1) % 2)">
+                            <tr>
+                                <td >
+                                    #$loop:item['sname']#
+                                </td>
+                                <td >
+                                    <a href="#$loop:item['searchurl']#">#$loop:item['term']#</a>
+                                </td>
+                                <td>
+                                    #$loop:item['date']#
+                                </td>
+                            </tr>
+                        <xar:else />
+                            <tr>
+                                <td class="xar-accent" >
+                                    #$loop:item['sname']#
+                                </td>
+                                <td class="xar-accent" >
+                                    <a href="#$loop:item['searchurl']#">#$loop:item['term']#</a>
+                                </td>
+                                <td class="xar-accent" >
+                                    #$loop:item['date']#
+                                </td>
+                            </tr>
+                        </xar:if>
+                    </xar:loop>
+                </table>
+            </xar:if>
+            <xar:if condition="!empty($message)">
+                #$message#
+            <xar:else />
+                <form action="index.php" method="get">
+                    <div class="xar-form-input-wrapper">
+                        <label for="q" class="xar-form-label"><xar:mlstring>Search for:</xar:mlstring></label>
+                        <input type="text" name="q" id="q" size="20" />
+                        <xar:set name="$search"><xar:mlstring>Search</xar:mlstring></xar:set>
+                        <input type="submit" value="#$search#" />
+                        &#160;<a href="&xar-modurl-search-user-main;"><xar:mlstring>Reset Form</xar:mlstring></a>
+                    </div>
+
+                    <div class="xar-form-input-wrapper">
+                        <label for="author" class="xar-form-label"><xar:mlstring>By author:</xar:mlstring></label>
+                        <input type="text" name="author" id="author" size="20" />
+                    </div>
+                    <xar:if condition="!empty($query)">
+                        <p><xar:mlstring>Searching on term</xar:mlstring>: <strong>#$query#</strong></p>
+                    </xar:if>
+                    <xar:if condition="!empty($name)">
+                        <p><xar:mlstring>Searching for items authored by</xar:mlstring>: <strong>#$name#</strong></p>
+                    </xar:if>
+
+                    <hr />
+                    <div class="xar-padding-thick">
+                        #$output#
+                    </div>
+                    <input type="hidden" name="module" value="search" />
+                    <input type="hidden" name="type" value="user" />
+                    <input type="hidden" name="func" value="main" />
+                </form>
+            </xar:if>
+        </div>
+    </div>
+</div>

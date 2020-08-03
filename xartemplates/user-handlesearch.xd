@@ -1,0 +1,67 @@
+<div class="xar-mod-page">
+    <div class="xar-mod-head">
+        <xar:if condition="!xarRequestIsAJAX()">
+            <xar:template type="module" module="base" file="user-menu" />
+        </xar:if>
+    </div>
+    <div class="xar-mod-body">
+        <h1><xar:mlstring>Search results </xar:mlstring></h1>
+        <div class="xar-mod-content">
+            <div id="searchintro">
+              <p>
+                Your search on <span class="xar-title">'#$searchterms#'</span>
+                in the data of module <span class="xar-title">'#$searchmodule#'</span>
+                produced the following results:
+              </p>
+            </div>
+
+            <!-- Set the things we want to have in the form again -->
+            <xar:set name="$searchterms" scope="theme">#$searchterms#</xar:set>
+
+            <div id="searchform" style="float:right;">
+              <span class="xar-mod-title"><xar:mlstring>Search again</xar:mlstring></span>
+              <xar:foreach in="$searchform" key="$module" value="$form">
+                #$form#
+              </xar:foreach>
+            </div>
+
+            <div>#$pager#</div>
+
+            <style type="text/css">
+            .xar-search-match {
+              font-weight: bold;
+            }
+            </style>
+
+            <span class="xar-mod-title">
+              <xar:ml>
+                <xar:mlstring>Results #(1) to #(2) out of #(3)</xar:mlstring>
+                <xar:mlvar>#$searchstart#</xar:mlvar>
+                <xar:mlvar>#$searchend#</xar:mlvar>
+                <xar:mlvar>#$searchtotal#</xar:mlvar>
+              </xar:ml>
+            </span>
+
+
+            <!-- TODO: set the values of the searchform to the values searched on -->
+
+            <div id="searchtotal">
+              <xar:if condition="!empty($searchresults)">
+                <xar:loop name="$searchresults">
+                  <div id="searchresultitem" style="padding: 4px;">
+                    <a href="#$loop:item['link']#">#$loop:item['result']#</a> <span class="xar-sub">[ #$loop:item['itemtype']# ]</span><br/>
+                    #$loop:item['context']#<br/>
+                    <xar:if condition="!empty($loop:item['description'])">
+                      <xar:mlstring>Description:</xar:mlstring> #$loop:item['description']#<br/>
+                    </xar:if>
+                    <span class="xar-sub" style="color: green;">#$loop:item['link']#</span><br/>
+                  </div>
+                </xar:loop>
+              <xar:else/>
+                <xar:mlstring>No results found</xar:mlstring>
+              </xar:if>
+            </div>
+        </div>
+         #$pager#
+    </div>
+</div>

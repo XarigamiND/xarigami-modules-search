@@ -1,0 +1,12 @@
+<xar:comment> License: GPL http://www.gnu.org/copyleft/gpl.html </xar:comment>
+<form action="#xarModURL('search','user','main')#" method="get">
+    <div>
+        <input type="hidden" name="module" id="module" value="search" />
+        <label for="q#$blockid#"><xar:mlstring>Search</xar:mlstring></label>
+        <input type="text" name="q" id="q#$blockid#" size="15" />
+        <input style="margin-top: 5px" type="submit" value="#xarML('Go!')#" />
+        <xar:if condition="$useadvanced">
+            <span class="xar-align-right" style="font-size:smaller">&#160;<a href="#xarModURL('search','user','main')#"><xar:mlstring>Advanced Search</xar:mlstring></a></span>
+        </xar:if>
+    </div>
+</form>
