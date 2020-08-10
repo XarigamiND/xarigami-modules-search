@@ -48,12 +48,11 @@
             <h3>
                 <xar:mlstring>Further Information</xar:mlstring>
             </h3>
-            <p>
             <ul>
-                <li><xar:mlstring>Search project page at </xar:mlstring> <a href="http://xarigami.com/project/xarigami_search" title="#xarML('Search - Extension 32')#">Xarigami Project Page</a>.
-                </li>
+                <li><a href="http://xarigami.org/project/xarigami_search"><xar:mlstring>Xarigami Search project page</xar:mlstring></a></li>
+                <li><a href="http://xarigami.org/contrails/displayproject/xsearch"><xar:mlstring>Xarigami Search issue tracker</xar:mlstring></a></li>
+                <li><a href="http://xarigami.org/keywords/search"><xar:mlstring>Search related articles</xar:mlstring></a></li>
             </ul>
-            </p>
 
           <p class="xar-sub">
                 <xar:mlstring>Search Module Overview</xar:mlstring>&nbsp;<xar:mlstring>Revision</xar:mlstring> 0.3.2 &#160; 2010-08-31
